@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bảng giá dịch vụ Nguyên Dương Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg-color: #fbe7ef;
+      --bg-elevated: rgba(255, 255, 255, 0.96);
+      --bg-elevated-soft: rgba(255, 255, 255, 0.95);
+      --border-color: rgba(148, 163, 184, 0.45);
+      --accent: #0ea5e9;
+      --accent-soft: rgba(14, 165, 233, 0.15);
+      --accent-strong: #0284c7;
+      --accent-danger: #dc2626;
+      --text-color: #111827;
+      --text-muted: #6b7280;
+      --shadow-soft: 0 18px 40px rgba(148, 163, 184, 0.28);
+      --radius-xl: 18px;
+      --radius-lg: 12px;
+      --radius-pill: 999px;
+      --backdrop-blur: blur(18px);
+      --card-border-width: 1px;
+      --pill-bg: rgba(148, 163, 184, 0.16);
+      --pill-bg-active: rgba(14, 165, 233, 0.18);
+      --pill-border-active: rgba(14, 165, 233, 0.9);
+      --input-bg: rgba(255, 255, 255, 0.95);
+      --overlay-bg: rgba(15, 23, 42, 0.35);
+      --scrollbar-track: transparent;
+      --scrollbar-thumb: rgba(148, 163, 184, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(248, 187, 208, 0.9), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(219, 234, 254, 0.9), transparent 60%),
+        var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      padding: 24px 16px 80px 16px;
+      display: flex;
+      justify-content: center;
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--scrollbar-track);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 999px;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 1120px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.98),
+          rgba(255, 255, 255, 0.96)
+        );
+      border-radius: 24px;
+      border: 1px solid rgba(248, 250, 252, 0.9);
+      box-shadow:
+        0 24px 60px rgba(148, 163, 184, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(26px) saturate(160%);
+      -webkit-backdrop-filter: blur(26px) saturate(160%);
+      padding: 20px 18px 28px 18px;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding: 32px 24px 96px 24px;
+      }
+      .app-container {
+        padding: 26px 28px 32px 28px;
+      }
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .title-main {
+      font-size: 1.7rem;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #111827;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .subtitle-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #4ade80 0%, #16a34a 50%, #15803d 100%);
+      box-shadow: 0 0 10px rgba(74, 222, 128, 0.8);
+      flex-shrink: 0;
+    }
+
+    .notice {
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px dashed rgba(248, 113, 113, 0.7);
+      background:
+        linear-gradient(135deg, rgba(254, 226, 226, 0.95), rgba(255, 241, 242, 0.98));
+      color: #991b1b;
+      font-size: 0.88rem;
+      text-align: left;
+      box-shadow: 0 14px 30px rgba(248, 113, 113, 0.45);
+    }
+
+    .filters-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .search-input {
+      flex: 1 1 210px;
+      min-width: 0;
+      position: relative;
+    }
+
+    .search-input input {
+      width: 100%;
+      padding: 9px 30px 9px 30px;
+      border-radius: 999px;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      background: var(--input-bg);
+      color: var(--text-color);
+      font-size: 0.9rem;
+      outline: none;
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.3);
+    }
+
+    .search-input input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .tag-filter {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 65%);
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      color: var(--accent-strong);
+      font-size: 0.8rem;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 10px 22px rgba(56, 189, 248, 0.3);
+    }
+
+    .tag-filter span.short {
+      font-weight: 600;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .product-card {
+      position: relative;
+      border-radius: 22px;
+      padding: 14px 12px 14px 12px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 247, 250, 0.98));
+      border: var(--card-border-width) solid rgba(229, 231, 235, 0.9);
+      box-shadow:
+        0 18px 40px rgba(148, 163, 184, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.9);
+      backdrop-filter: var(--backdrop-blur);
+      -webkit-backdrop-filter: var(--backdrop-blur);
+      overflow: hidden;
+    }
+
+    .product-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #111827;
+    }
+
+    .product-tagline {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .badge-chip {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(249, 250, 251, 0.96);
+      box-shadow: 0 8px 18px rgba(148, 163, 184, 0.35);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      background: var(--pill-bg);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .pill.active {
+      background: var(--pill-bg-active);
+      color: var(--accent-strong);
+      border-color: var(--pill-border-active);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35);
+    }
+
+    .product-body {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: 0.77rem;
+    }
+
+    .field-label {
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .field-text {
+      color: var(--text-color);
+    }
+
+    .muted {
+      color: var(--text-muted);
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .price-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .price-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .price-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-danger);
+    }
+
+    .price-value small {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-danger);
+      margin-left: 4px;
+    }
+
+    .pay-button {
+      flex-shrink: 0;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      box-shadow: 0 15px 28px rgba(34, 197, 94, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pay-button span.icon {
+      font-size: 0.95rem;
+    }
+
+    .pay-button:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 10px 22px rgba(34, 197, 94, 0.6);
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--overlay-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 40;
+    }
+
+    .overlay.visible {
+      display: flex;
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 360px;
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 18px;
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.95);
+      padding: 10px 12px 10px 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modal::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at top, rgba(248, 187, 208, 0.4), transparent 60%),
+        radial-gradient(circle at bottom, rgba(219, 234, 254, 0.4), transparent 60%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .modal-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .modal-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .modal-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .close-btn {
+      border: none;
+      background: rgba(243, 244, 246, 0.98);
+      color: var(--text-muted);
+      border-radius: 999px;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.05rem;
+      box-shadow: 0 6px 14px rgba(148, 163, 184, 0.45);
+    }
+
+    .variant-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 240px;
+      overflow-y: auto;
+      padding-right: 2px;
+      margin-bottom: 4px;
+    }
+
+    .variant-item {
+      border-radius: 12px;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      padding: 6px 8px;
+      background: rgba(255, 255, 255, 0.98);
+      font-size: 0.78rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.22);
+    }
+
+    .variant-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .variant-price {
+      color: var(--accent-danger);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .variant-meta {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .variant-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 2px;
+    }
+
+    .variant-select-btn {
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(34, 197, 94, 0.55);
+    }
+
+    .payment-amount {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent-danger);
+      margin: 4px 0 2px 0;
+    }
+
+    .payment-amount span {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-left: 4px;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.8rem;
+      margin: 4px 0 6px 0;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .info-label {
+      min-width: 70px;
+      font-weight: 500;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .info-value {
+      font-weight: 600;
+      color: var(--text-color);
+      word-break: break-all;
+      font-size: 0.8rem;
+    }
+
+    .copy-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .copy-btn {
+      border-radius: 999px;
+      border: none;
+      padding: 3px 8px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .copy-btn:active {
+      transform: translateY(1px);
+    }
+
+    .qr-box {
+      margin: 4px 0 6px 0;
+      padding: 6px;
+      border-radius: 12px;
+      border: 1px dashed rgba(209, 213, 219, 0.9);
+      background: rgba(255, 255, 255, 0.98);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.22);
+    }
+
+    .qr-img {
+      width: 76px;
+      height: 76px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .qr-text {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      max-width: 210px;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary,
+    .btn-primary {
+      flex: 1 1 110px;
+      border-radius: 999px;
+      padding: 6px 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+
+    .btn-secondary {
+      background: #f9fafb;
+      color: var(--text-color);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: 0 8px 18px rgba(148, 163, 184, 0.3);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #ffffff;
+      box-shadow: 0 10px 22px rgba(34, 197, 94, 0.6);
+    }
+
+    .btn-secondary:active,
+    .btn-primary:active {
+      transform: translateY(1px);
+    }
+
+    .floating-zalo {
+      position: fixed;
+      left: 14px;
+      bottom: 14px;
+      z-index: 50;
+    }
+
+    .floating-zalo button {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      box-shadow:
+        0 18px 40px rgba(56, 189, 248, 0.7),
+        0 0 0 1px rgba(191, 219, 254, 0.85);
+    }
+
+    .floating-zalo button:active {
+      transform: translateY(1px);
+    }
+
+    .floating-zalo-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #0ea5e9;
+      font-size: 0.85rem;
+    }
+
+    .floating-zalo-label {
+      font-size: 0.65rem;
+    }
+
+    .thank-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.3);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 60;
+    }
+
+    .thank-overlay.visible {
+      display: flex;
+    }
+
+    .thank-modal {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      max-width: 280px;
+      text-align: center;
+      box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(229, 231, 235, 0.95);
+    }
+
+    .thank-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .thank-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .thank-btn {
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #ffffff;
+      box-shadow: 0 10px 22px rgba(34, 197, 94, 0.6);
+    }
+
+    .thank-btn:active {
+      transform: translateY(1px);
+    }
+
+    .pill,
+    .variant-select-btn,
+    .pay-button,
+    .floating-zalo button,
+    .copy-btn,
+    .btn-primary,
+    .btn-secondary,
+    .close-btn,
+    .thank-btn {
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease,
+        box-shadow 0.18s ease, transform 0.08s ease;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        align-items: flex-start;
+      }
+      .product-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .price-block {
+        order: 2;
+      }
+      .pay-button {
+        order: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="title-block">
+        <div class="title-main">
+          <span>Bảng giá dịch vụ</span>
+        </div>
+        <div class="subtitle">
+          <span class="subtitle-dot"></span>
+          <span id="subtitle-text">
+            Đang tải thời gian cập nhật...
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <p class="notice">
+      <em><u><strong>Khi thanh toán xong vui lòng liên hệ nút Zalo góc trái gửi bill để được kích hoạt.</strong></u></em>
+    </p>
+
+    <div class="filters-row">
+      <div class="search-input">
+        <span class="search-icon">🔎</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Tìm theo tên dịch vụ, gói, mô tả..."
+        />
+      </div>
+      <button class="tag-filter" id="tagOfficialOnly" type="button">
+        <span class="short">Chính chủ</span>
+        <span class="long">Ưu tiên dịch vụ chính chủ</span>
+      </button>
+    </div>
+
+    <div id="productsGrid" class="products-grid"></div>
+  </div>
+
+  <div class="overlay" id="variantOverlay">
+    <div class="modal">
+      <div class="modal-inner">
+        <div class="modal-header">
+          <div>
+            <div class="modal-title">Chọn gói cần mua</div>
+            <div class="modal-subtitle" id="variantProductName"></div>
+          </div>
+          <button class="close-btn" type="button" data-close-variant>&times;</button>
+        </div>
+        <div class="variant-list" id="variantList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="paymentOverlay">
+    <div class="modal">
+      <div class="modal-inner">
+        <div class="modal-header">
+          <div>
+            <div class="modal-title">Thông tin thanh toán</div>
+            <div class="modal-subtitle">
+              Vui lòng chuyển khoản đúng số tiền và nội dung bên dưới.
+            </div>
+          </div>
+          <button class="close-btn" type="button" data-close-payment>&times;</button>
+        </div>
+
+        <div class="payment-amount" id="paymentAmount">
+          0<span>VND</span>
+        </div>
+
+        <div class="info-list">
+          <div class="info-row">
+            <span class="info-label">Dịch vụ</span>
+            <span class="info-value" id="paymentServiceName">---</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Gói</span>
+            <span class="info-value" id="paymentVariantName">---</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Ngân hàng</span>
+            <span class="info-value">Techcombank</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Số TK</span>
+            <span class="info-value">
+              <span class="copy-group">
+                <span id="bankNumberText">444555666001</span>
+                <button class="copy-btn" type="button" data-copy="bank">
+                  <span>📋</span><span>Sao chép</span>
+                </button>
+              </span>
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Chủ TK</span>
+            <span class="info-value">NGÔ MAI NGUYÊN DƯƠNG</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Nội dung</span>
+            <span class="info-value">
+              <span class="copy-group">
+                <span id="transferContentText">ThanhToanDichVuWeb</span>
+                <button class="copy-btn" type="button" data-copy="content">
+                  <span>📋</span><span>Sao chép</span>
+                </button>
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="qr-box">
+          <img
+            id="qrImage"
+            class="qr-img"
+            src="https://img.vietqr.io/image/970407-444555666001-compact.png?amount=0&addInfo=ThanhToanDichVuWeb&accountName=NGO%20MAI%20NGUYEN%20DUONG"
+            alt="QR thanh toán"
+          />
+          <div class="qr-text">
+            Quét mã QR để thanh toán nhanh. Vui lòng kiểm tra kỹ số tiền và nội dung
+            trước khi xác nhận.
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-secondary" type="button" id="btnPaid">
+            <span>✔</span><span>Đã thanh toán</span>
+          </button>
+          <button class="btn-primary" type="button" id="btnZalo">
+            <span>💬</span><span>Gửi bill Zalo</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thank-overlay" id="thankOverlay">
+    <div class="thank-modal">
+      <div class="thank-title">Cảm ơn bạn!</div>
+      <div class="thank-text">
+        Đơn thanh toán đã được ghi nhận. Vui lòng gửi bill qua Zalo để được kích hoạt dịch vụ nhanh nhất.
+      </div>
+      <button class="thank-btn" type="button" id="thankCloseBtn">Đóng</button>
+    </div>
+  </div>
+
+  <div class="floating-zalo">
+    <button type="button" id="floatingZaloBtn">
+      <span class="floating-zalo-icon">Z</span>
+      <span class="floating-zalo-label">Zalo</span>
+    </button>
+  </div>
+
+  <script>
+    function formatVNDateTime(date) {
+      const pad = (n) => (n < 10 ? "0" + n : "" + n);
+      const h = pad(date.getHours());
+      const m = pad(date.getMinutes());
+      const d = pad(date.getDate());
+      const mo = pad(date.getMonth() + 1);
+      const y = date.getFullYear();
+      return `Bảng giá được cập nhật lúc ${h}:${m} - ${d}/${mo}/${y}`;
+    }
+    document.getElementById("subtitle-text").textContent = formatVNDateTime(new Date());
+
+    const rawRows = [
+      ["CHAT GPT PLUS","Gói ChatGPT Plus 1 tháng dạng Team","Hưởng mọi đặc quyền của ChatGPT Plus.","- Yêu cầu: gửi mail - Bạn sẻ được thêm vào Team, sau khi được thêm bạn cần chuyển sang Team được thêm để sử dụng dịch vụ.","1 Tháng","Chính Chủ","Bảo Hành Trọn Gói",99000],
+      ["CHAT GPT PLUS","Gói ChatGPT Plus 3 tháng dạng Code","Hưởng mọi đặc quyền của ChatGPT Plus.","- Yêu cầu: tài khoản chưa mua gói. - Nhấn vào link claim code và gửi lại link pay để lên gói. Nếu đã mua gói từ CHATGPT vui lòng tạo tài khoản mới để mua dịch vụ này.","3 tháng","Chính Chủ","Bảo Hành Trọn Gói",249000],
+      ["Sora2","Tạo video không giới hạn (xịn hơn Veo3)","Tạo video không giới hạn (xịn hơn Veo3).","- Định dạng: Code invite. - Khi mua bạn sẻ được gửi mã mời tham gia, sau đó nhập mã mời và sử dụng. - Hỗ trợ đăng nhập trên nhiều thiết bị.","Vĩnh viễn","Chính Chủ","Không Bảo Hành",34000],
+      ["Perplexity","Pro","Hưởng mọi tính năng của gói Pro, như truy cập không giới hạn Comet, sử dụng được tất cả các mô hình AI mới nhất, bao gồm GPT-5 và Claude Sonnet 4, không giới hạn upload tệp, tăng gấp 10 lần số trích dẫn trong câu trả lời và còn nhiều tính năng nữa....","- Yêu cầu: gửi tài khoản mật khẩu và tài khoản chưa mua gói. Nếu đã mua gói từ Perplexity vui lòng tạo tài khoản mới để mua dịch vụ này.","1 Năm","Chính Chủ","Bảo hành 3 tháng",399000],
+      ["Grok","Super","Hưởng mọi tính năng của gói Super.","- Yêu cầu: gửi tài khoản mật khẩu.","1 Tháng","Chính Chủ","Bảo Hành Trọn Gói",429000],
+      ["Claude","Pro","Hưởng mọi tính năng của gói Pro.","- Yêu cầu: gửi tài khoản mật khẩu.","1 Tháng","Chính Chủ","Bảo Hành Trọn Gói",579000],
+      ["Spotify","Premium","Hưởng mọi tính năng của gói Premium.","- Yêu cầu: gửi mail - Bạn sẻ được thêm vào gia đình, sau khi được thêm bạn cần truy cập vào email và click xát nhận và vào lại app để sử dụng dịch vụ.","1 Năm","Chính Chủ","Bảo Hành Trọn Gói",399000],
+      ["Spotify","Premium 4 tháng","Hưởng mọi tính năng của gói Premium.","- Yêu cầu: gửi acc & tài khoản new chưa mua gói lần nào.","4 tháng","Chính Chủ","Bảo Hành Trọn Gói",129000],
+      ["Cursor","Pro 14 ngày","Hưởng mọi tính năng của gói Pro.","- Định dạng: Email | Password. - Khi mua bạn sẻ được gửi tài khoản mật khẩu chứa gói, sau đó đăng nhập tài khoản Cursor và sử dụng. - Hỗ trợ đăng nhập trên nhiều thiết bị.","14 ngày","Acc Cấp","Không Bảo Hành",60000],
+      ["Cursor","Pro 1 tháng","Hưởng mọi tính năng của gói Pro.","","1 Tháng","Acc Cấp","Bảo Hành Trọn Gói",139000],
+      // Canva Edu / Canva Pro gộp, label rõ ràng
+      ["Canva Edu / Canva Pro","Canva Edu 1 năm","Tính năng tương tự gói Pro chỉ có hạn chế 1 số tính năng AI.","- Yêu cầu: gửi email. - Khi mua bạn sẻ được thêm vào team Canva, sau đó chuyển tài khoản sang Team được thêm để sử dụng. - Hỗ trợ đăng nhập mọi thiết bị.","1 Năm","Chính Chủ","Bảo Hành Trọn Gói",49000],
+      ["Canva Edu / Canva Pro","Canva Edu team 1-3 năm","Tính năng tương tự gói Pro với team lớn.","- Định dạng: Email | Password. - Tài khoản Team có thể thêm tới 10.000 thành viên. - Khi mua bạn sẻ được gửi tài khoản mật khẩu chứa gói, sau đó đăng nhập tài khoản Canva và sử dụng. - Hỗ trợ đăng nhập trên nhiều thiết bị.","1 năm - 3 năm","Acc Cấp","Bảo hành 3 tháng",659000],
+      ["Canva Edu / Canva Pro","Canva Pro 20-30 ngày","Hưởng mọi tính năng của gói Pro.","- Yêu cầu: gửi email. - Khi mua bạn sẻ được thêm vào team Canva, sau đó chuyển tài khoản sang Team được thêm để sử dụng. - Hỗ trợ đăng nhập mọi thiết bị.","20 - 30 ngày","Chính Chủ","Bảo Hành Trọn Gói",79000],
+      ["Canva Edu / Canva Pro","Canva Pro team 1 tháng","Hưởng mọi tính năng của gói Pro.","- Định dạng: Email | Password. - Tài khoản Team có thể thêm tới 100 thành viên. - Khi mua bạn sẻ được gửi tài khoản mật khẩu chứa gói, sau đó đăng nhập tài khoản Canva và sử dụng. - Hỗ trợ đăng nhập trên nhiều thiết bị.","1 Tháng","Acc Cấp","Bảo Hành Trọn Gói",211000],
+      ["Canva Edu / Canva Pro","Canva Pro team 14 ngày","Hưởng mọi tính năng của gói Pro.","","14 ngày","Acc Cấp","Bảo Hành Trọn Gói",99000],
+      // Netflix
+      ["Netflix","Premium 4K 1 tháng","Xem phim trên Netflix với chất lượng 4K.","- Định dạng: Hồ sơ xem phim | Tên đăng nhập | Mật khẩu. - Đăng nhập trong app Netflix trên điện thoại hoặc nếu là pc/laptop hãy đăng nhập bằng web https://www.netflix.com/ Lưu ý: - Các tài khoản tại shop, anh/chị không được thay đổi phương thức thanh toán và thay đổi mật khẩu. - Shop không hỗ trợ không thể đăng nhập ( vì lí do spam hay mạng ) shop chỉ hỗ trợ khi acc sai pass. - Chỉ xem 1 thiết bị cùng 1 lúc để không gặp lỗi.","1 Tháng","Acc Cấp","Bảo Hành Trọn Gói",79000],
+      ["Netflix","Premium 4K 3 tháng","Xem phim trên Netflix với chất lượng 4K.","","3 tháng","Acc Cấp","Bảo Hành Trọn Gói",219000],
+      ["Netflix","Premium 4K 6 tháng","Xem phim trên Netflix với chất lượng 4K.","","6 tháng","Acc Cấp","Bảo Hành Trọn Gói",399000],
+      ["Netflix","Premium 4K 1 năm","Xem phim trên Netflix với chất lượng 4K.","","1 Năm","Acc Cấp","Bảo Hành Trọn Gói",749000],
+      // Google ONE
+      ["Google ONE","Edu 1 năm","Hưởng mọi đặc quyền của GG ONE như: 1000 credit sử dụng Veo3, Gemini Pro, 2TB dung lượng lưu trữ Google Drive.","- Định dạng: Email | Password. - Khi mua bạn sẻ nhập được tài khoản và mật khẩu, đăng nhập tài khoản đó vào https://accounts.google.com/v3/signin/ và sử dụng. - Hỗ trợ mọi thiết bị.","1 Năm","Acc Cấp","Bảo Hành Trọn Gói",699000],
+      // Office 365
+      ["Office 365","Family 1 năm","Sử dụng full tính năng các phần mền trong bộ Office như: Word, Excel, PowerPoint.","- Yêu cầu: gửi email. - Khi mua bạn sẻ được thêm vào Family, bấm vào mail để active và vào Office để sử dụng. - Hỗ trợ đăng nhập mọi thiết bị.","1 Năm","Chính Chủ","Bảo Hành Trọn Gói",369000],
+      // Duolingo
+      ["Duolingo","Super 1 năm","- Không giới hạn trái tim - Không giới hạn lượt thử ở cấp độ huyền thoại - Không giới hạn lượt thử thách thời gian - Truy cập đầy đủ vào trung tâm luyện tập - Khắc phục chuỗi tháng - Biểu tượng ứng dụng Super Duolingo - Loại bỏ quảng cáo","- Yêu cầu: gửi email | mật khẩu. - Khi mua bạn sẻ được thêm vào Family, bấm vào mail để active và vào app để sử dụng. - Hỗ trợ đăng nhập mọi thiết bị.","1 Năm","Chính Chủ","Bảo Hành Trọn Gói",230000],
+      // FPT Play
+      ["FPT Play","Smax 3 tháng","- Hơn 140 kênh truyền hình. - Ưu tiên xem trước phim bộ phát song song. - Kho phim đặc sắc.","- Yêu cầu: gửi số điện thoại -> cung cấp OTP. - Khi mua bạn sẻ được nhận các quyền lợi của FPT Play Smax. - Hỗ trợ đăng nhập 3 thiết bị.","3 tháng","Chính Chủ","Bảo Hành Trọn Gói",130000],
+      // VietON + HBO gộp
+      ["VietON / HBO(vieON)","VietON Vip 3 tháng","Phim chiếu rạp, phim TVB, phim Originals, thể thao (Ngoại hạng Anh, VĐQG Ả Rập, Bundesliga, Serie A, Ligue 1, và nhiều môn khác).","- Định dạng: Email | Password. - Khi mua bạn sẻ được gửi tài khoản mật khẩu chứa gói, sau đó đăng nhập tài khoản VietON và sử dụng. - Hỗ trợ đăng nhập đồng thời tối đa 4 thiết bị gồm PC, Android, iOS.","3 tháng","Acc Cấp","1 đổi 1",110000],
+      ["VietON / HBO(vieON)","VietON Vip 6 tháng","Phim chiếu rạp, phim TVB, phim Originals, thể thao (Ngoại hạng Anh, VĐQG Ả Rập, Bundesliga, Serie A, Ligue 1, và nhiều môn khác).","","6 tháng","Acc Cấp","1 đổi 1",200000],
+      ["VietON / HBO(vieON)","VietON Vip 1 năm","Phim chiếu rạp, phim TVB, phim Originals, thể thao (Ngoại hạng Anh, VĐQG Ả Rập, Bundesliga, Serie A, Ligue 1, và nhiều môn khác).","","1 Năm","Acc Cấp","1 đổi 1",320000],
+      ["VietON / HBO(vieON)","HBO(vieON) VIP 3 tháng","Toàn bộ nội dung gói VIP, thêm chương trình đặc sắc từ HBO, Cinemax (Mỹ), phim Hollywood.","- Định dạng: Email | Password. - Khi mua bạn sẻ được gửi tài khoản mật khẩu chứa gói, sau đó đăng nhập tài khoản VietON và sử dụng. - Hỗ trợ đăng nhập đồng thời tối đa 4 thiết bị gồm PC, Android, iOS.","3 tháng","Acc Cấp","1 đổi 1",160000],
+      ["VietON / HBO(vieON)","HBO(vieON) VIP 6 tháng","Toàn bộ nội dung gói VIP, thêm chương trình đặc sắc từ HBO, Cinemax (Mỹ), phim Hollywood.","","6 tháng","Acc Cấp","1 đổi 1",239000],
+      // TV360
+      ["TV360","Super Vip 2 tháng","Kênh HD/4K, nội dung mở rộng, thể thao, quốc tế, hỗ trợ xem lại 7 ngày, không quảng cáo","- Yêu cầu: gửi số điện thoại -> cung cấp OTP. - Khi mua bạn sẻ được nhận các quyền lợi của TV360 Super Vip. - Hỗ trợ đăng nhập 3 thiết bị.","2 tháng","Chính Chủ","Bảo Hành Trọn Gói",70000],
+      // Express VPN
+      ["Express VPN","VIP 28-32 ngày","ExpressVPN 28 - 32 ngày.","- Định dạng: Key | Email | Password. - Hỗ trợ đăng nhập đồng thời tối đa 8 thiết bị gồm PC, Android, iOS.","28 - 32 ngày","Key","1 đổi 1",45000],
+      // HMA VPN
+      ["HMA VPN","VIP 20-25 ngày","HMA VPN 20 - 25 ngày.","- Định dạng : mã kích hoạt | ngày tháng năm tạo. - Hỗ trợ đăng nhập trên 5 thiết bị PC, Android CHÚ Ý : KEY KÍCH HOẠT KHÔNG DÙNG TRÊN IOS HÃY CÂN NHẮC KỸ KHI MUA.","20 - 25 ngày","Key","1 đổi 1",40000],
+      // Surfshark VPN
+      ["Surfshark VPN","VIP 7 ngày","SurfShark VPN 7 ngày.","- Định dạng: Email | Password. - Hỗ trợ đăng nhập không giới hạn thiết bị.","7 ngày","Acc Cấp","1 đổi 1",27000]
+    ];
+
+    function shortTermLabel(term) {
+      const t = term.toLowerCase();
+      if (t.includes("vĩnh")) return "Vĩnh viễn";
+      if (t.includes("14") && t.includes("ngày")) return "14 ngày";
+      if (t.includes("28") || t.includes("32")) return "28-32 ngày";
+      if (t.includes("20") && t.includes("25")) return "20-25 ngày";
+      if (t.includes("7") && t.includes("ngày")) return "7 ngày";
+      if (t.includes("2 tháng")) return "2 tháng";
+      if (t.includes("3 tháng")) return "3 tháng";
+      if (t.includes("6 tháng")) return "6 tháng";
+      if (t.includes("1 năm")) return "1 năm";
+      if (t.includes("1 tháng")) return "1 tháng";
+      if (t.includes("20") && t.includes("30")) return "20-30 ngày";
+      if (t.includes("1 năm - 3 năm") || t.includes("1 năm-3 năm")) return "1-3 năm";
+      return term;
+    }
+
+    function expiryDescription(term) {
+      const lower = term.toLowerCase();
+      if (lower.includes("vĩnh")) return "Sử dụng vĩnh viễn kể từ ngày kích hoạt.";
+      if (lower.includes("14") && lower.includes("ngày")) return "Hết hạn sau 14 ngày kể từ ngày kích hoạt.";
+      if (lower.includes("7") && lower.includes("ngày")) return "Hết hạn sau 7 ngày kể từ ngày kích hoạt.";
+      if (lower.includes("28") || lower.includes("32")) return "Hết hạn sau 28–32 ngày kể từ ngày kích hoạt.";
+      if (lower.includes("20") && lower.includes("25")) return "Hết hạn sau 20–25 ngày kể từ ngày kích hoạt.";
+      if (lower.includes("2 tháng")) return "Hết hạn sau 2 tháng kể từ ngày kích hoạt.";
+      if (lower.includes("3 tháng")) return "Hết hạn sau 3 tháng kể từ ngày kích hoạt.";
+      if (lower.includes("6 tháng")) return "Hết hạn sau 6 tháng kể từ ngày kích hoạt.";
+      if (lower.includes("1 năm")) return "Hết hạn sau 1 năm kể từ ngày kích hoạt.";
+      if (lower.includes("1 tháng")) return "Hết hạn sau 1 tháng kể từ ngày kích hoạt.";
+      if (lower.includes("20") && lower.includes("30")) return "Hết hạn sau khoảng 20–30 ngày kể từ ngày kích hoạt.";
+      if (lower.includes("1 năm - 3 năm") || lower.includes("1 năm-3 năm")) return "Thời hạn từ 1 đến 3 năm tùy gói cụ thể kể từ ngày kích hoạt.";
+      return "Hết hạn theo thời hạn gói kể từ ngày kích hoạt.";
+    }
+
+    function formatPrice(vnd) {
+      return vnd.toLocaleString("vi-VN");
+    }
+
+    const productMap = new Map();
+    for (const r of rawRows) {
+      const [name, pkg, benefit, note, term, ownerType, warranty, price] = r;
+      const key = name.trim();
+      if (!productMap.has(key)) {
+        productMap.set(key, {
+          name: key,
+          benefit: benefit || "",
+          ownerType: ownerType || "",
+          variants: []
+        });
+      }
+      const product = productMap.get(key);
+      product.variants.push({
+        id: product.variants.length,
+        package: pkg || term || "",
+        term: term || "",
+        shortLabel: shortTermLabel(term || ""),
+        note: note || "",
+        warranty: warranty || "",
+        price: price || 0,
+        expiryDesc: expiryDescription(term || "")
+      });
+    }
+
+    const products = Array.from(productMap.values()).sort((a, b) =>
+      a.name.localeCompare(b.name, "vi")
+    );
+
+    const productsGridEl = document.getElementById("productsGrid");
+    const variantOverlayEl = document.getElementById("variantOverlay");
+    const variantListEl = document.getElementById("variantList");
+    const variantProductNameEl = document.getElementById("variantProductName");
+
+    const paymentOverlayEl = document.getElementById("paymentOverlay");
+    const paymentAmountEl = document.getElementById("paymentAmount");
+    const paymentServiceNameEl = document.getElementById("paymentServiceName");
+    const paymentVariantNameEl = document.getElementById("paymentVariantName");
+    const transferContentTextEl = document.getElementById("transferContentText");
+    const qrImageEl = document.getElementById("qrImage");
+
+    const state = {
+      search: "",
+      onlyOfficial: false,
+      activeVariantByProduct: {},
+      selectedProduct: null,
+      selectedVariant: null
+    };
+
+    function renderProducts() {
+      productsGridEl.innerHTML = "";
+      let filtered = products;
+
+      const q = state.search.trim().toLowerCase();
+      if (q) {
+        filtered = filtered.filter((p) => {
+          const inName = p.name.toLowerCase().includes(q);
+          const inBenefit = (p.benefit || "").toLowerCase().includes(q);
+          const inVariants = p.variants.some(
+            (v) =>
+              v.package.toLowerCase().includes(q) ||
+              v.term.toLowerCase().includes(q) ||
+              (v.note || "").toLowerCase().includes(q)
+          );
+          return inName || inBenefit || inVariants;
+        });
+      }
+
+      if (state.onlyOfficial) {
+        filtered = filtered.filter(
+          (p) => (p.ownerType || "").toLowerCase() === "chính chủ"
+        );
+      }
+
+      if (!filtered.length) {
+        productsGridEl.innerHTML =
+          '<p style="font-size:0.9rem;color:var(--text-muted);text-align:center;padding:10px;">Không tìm thấy dịch vụ phù hợp với bộ lọc hiện tại.</p>';
+        return;
+      }
+
+      for (const product of filtered) {
+        const firstVariant = product.variants[0];
+        const activeId =
+          state.activeVariantByProduct[product.name] ?? firstVariant.id;
+        const activeVariant =
+          product.variants.find((v) => v.id === activeId) || firstVariant;
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        const header = document.createElement("div");
+        header.className = "product-header";
+
+        const leftHead = document.createElement("div");
+        const nameEl = document.createElement("div");
+        nameEl.className = "product-name";
+        nameEl.textContent = product.name;
+
+        const taglineEl = document.createElement("div");
+        taglineEl.className = "product-tagline";
+        taglineEl.textContent = activeVariant.package;
+
+        leftHead.appendChild(nameEl);
+        leftHead.appendChild(taglineEl);
+
+        const rightHead = document.createElement("div");
+        const badge = document.createElement("div");
+        badge.className = "badge-chip";
+        const badgeDot = document.createElement("span");
+        badgeDot.className = "badge-dot";
+        const badgeText = document.createElement("span");
+        badgeText.textContent = product.ownerType || "Dịch vụ số";
+        badge.appendChild(badgeDot);
+        badge.appendChild(badgeText);
+        rightHead.appendChild(badge);
+
+        header.appendChild(leftHead);
+        header.appendChild(rightHead);
+
+        const pillRow = document.createElement("div");
+        pillRow.className = "pill-row";
+        for (const variant of product.variants) {
+          const pill = document.createElement("button");
+          pill.type = "button";
+          pill.className = "pill";
+          if (variant.id === activeVariant.id) pill.classList.add("active");
+          pill.textContent = variant.shortLabel;
+          pill.addEventListener("click", () => {
+            state.activeVariantByProduct[product.name] = variant.id;
+            updateCardForVariant(card, product, variant);
+          });
+          pillRow.appendChild(pill);
+        }
+
+        const body = document.createElement("div");
+        body.className = "product-body";
+
+        const descEl = document.createElement("div");
+        descEl.innerHTML =
+          '<span class="field-label">Quyền lợi: </span>' +
+          `<span class="field-text">${product.benefit}</span>`;
+
+        const noteEl = document.createElement("div");
+        noteEl.innerHTML =
+          '<span class="field-label">Lưu ý: </span>' +
+          `<span class="field-text">${activeVariant.note || "Liên hệ để được tư vấn chi tiết."}</span>`;
+
+        const termEl = document.createElement("div");
+        termEl.innerHTML =
+          '<span class="field-label">Thời hạn: </span>' +
+          `<span class="field-text">${activeVariant.term}</span>`;
+
+        const ownerEl = document.createElement("div");
+        ownerEl.innerHTML =
+          '<span class="field-label">Loại tài khoản: </span>' +
+          `<span class="field-text">${product.ownerType}</span>`;
+
+        const warrantyEl = document.createElement("div");
+        warrantyEl.innerHTML =
+          '<span class="field-label">Bảo hành: </span>' +
+          `<span class="field-text">${activeVariant.warranty}</span>`;
+
+        const expiryEl = document.createElement("div");
+        expiryEl.innerHTML =
+          '<span class="field-label">Hết hạn: </span>' +
+          `<span class="field-text muted">${activeVariant.expiryDesc}</span>`;
+
+        body.appendChild(descEl);
+        body.appendChild(noteEl);
+        body.appendChild(termEl);
+        body.appendChild(ownerEl);
+        body.appendChild(warrantyEl);
+        body.appendChild(expiryEl);
+
+        const footer = document.createElement("div");
+        footer.className = "product-footer";
+
+        const priceBlock = document.createElement("div");
+        priceBlock.className = "price-block";
+        const priceLabel = document.createElement("div");
+        priceLabel.className = "price-label";
+        priceLabel.textContent = "Giá";
+        const priceValue = document.createElement("div");
+        priceValue.className = "price-value";
+        priceValue.innerHTML =
+          formatPrice(activeVariant.price) + "<small> VND</small>";
+        priceBlock.appendChild(priceLabel);
+        priceBlock.appendChild(priceValue);
+
+        const payBtn = document.createElement("button");
+        payBtn.type = "button";
+        payBtn.className = "pay-button";
+        payBtn.innerHTML = '<span class="icon">💳</span><span>Thanh toán</span>';
+        payBtn.addEventListener("click", () => {
+          openVariantModal(product);
+        });
+
+        footer.appendChild(priceBlock);
+        footer.appendChild(payBtn);
+
+        card.appendChild(header);
+        card.appendChild(pillRow);
+        card.appendChild(body);
+        card.appendChild(footer);
+
+        card._elements = {
+          taglineEl,
+          noteEl,
+          termEl,
+          warrantyEl,
+          expiryEl,
+          priceValue,
+          pillRow
+        };
+
+        productsGridEl.appendChild(card);
+      }
+    }
+
+    function updateCardForVariant(card, product, variant) {
+      const els = card._elements;
+      if (!els) return;
+      els.taglineEl.textContent = variant.package;
+      els.noteEl.innerHTML =
+        '<span class="field-label">Lưu ý: </span>' +
+        `<span class="field-text">${variant.note || "Liên hệ để được tư vấn chi tiết."}</span>`;
+      els.termEl.innerHTML =
+        '<span class="field-label">Thời hạn: </span>' +
+        `<span class="field-text">${variant.term}</span>`;
+      els.warrantyEl.innerHTML =
+        '<span class="field-label">Bảo hành: </span>' +
+        `<span class="field-text">${variant.warranty}</span>`;
+      els.expiryEl.innerHTML =
+        '<span class="field-label">Hết hạn: </span>' +
+        `<span class="field-text muted">${variant.expiryDesc}</span>`;
+      els.priceValue.innerHTML =
+        formatPrice(variant.price) + "<small> VND</small>";
+
+      const pills = els.pillRow.querySelectorAll(".pill");
+      pills.forEach((pill, idx) => {
+        pill.classList.toggle("active", idx === variant.id);
+      });
+    }
+
+    function openVariantModal(product) {
+      state.selectedProduct = product;
+      variantProductNameEl.textContent = product.name;
+      variantListEl.innerHTML = "";
+
+      for (const variant of product.variants) {
+        const item = document.createElement("div");
+        item.className = "variant-item";
+
+        const heading = document.createElement("div");
+        heading.className = "variant-heading";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = variant.package || variant.shortLabel;
+        const priceSpan = document.createElement("span");
+        priceSpan.className = "variant-price";
+        priceSpan.textContent = formatPrice(variant.price) + " VND";
+        heading.appendChild(nameSpan);
+        heading.appendChild(priceSpan);
+
+        const meta = document.createElement("div");
+        meta.className = "variant-meta";
+        meta.textContent = `${variant.term} | ${variant.warranty}`;
+
+        const note = document.createElement("div");
+        note.className = "variant-meta";
+        note.textContent =
+          (variant.note && variant.note.replace(/^- /, "")) ||
+          "Lưu ý chi tiết sẽ được tư vấn thêm khi liên hệ.";
+
+        const actions = document.createElement("div");
+        actions.className = "variant-actions";
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "variant-select-btn";
+        btn.textContent = "Chọn mua";
+        btn.addEventListener("click", () => {
+          state.selectedVariant = variant;
+          closeVariantModal();
+          openPaymentModal(product, variant);
+        });
+        actions.appendChild(btn);
+
+        item.appendChild(heading);
+        item.appendChild(meta);
+        item.appendChild(note);
+        item.appendChild(actions);
+        variantListEl.appendChild(item);
+      }
+
+      variantOverlayEl.classList.add("visible");
+    }
+
+    function closeVariantModal() {
+      variantOverlayEl.classList.remove("visible");
+    }
+
+    function openPaymentModal(product, variant) {
+      paymentServiceNameEl.textContent = product.name;
+      paymentVariantNameEl.textContent = variant.package || variant.shortLabel;
+      paymentAmountEl.innerHTML =
+        formatPrice(variant.price) + '<span> VND</span>';
+
+      const content = `ThanhToanDichVuWeb - ${product.name} - ${variant.shortLabel}`;
+      transferContentTextEl.textContent = content;
+
+      const encodedInfo = encodeURIComponent("ThanhToanDichVuWeb");
+      const qrUrl =
+        `https://img.vietqr.io/image/970407-444555666001-compact.png?amount=${variant.price}` +
+        `&addInfo=${encodedInfo}&accountName=NGO%20MAI%20NGUYEN%20DUONG`;
+      qrImageEl.src = qrUrl;
+
+      paymentOverlayEl.classList.add("visible");
+    }
+
+    function closePaymentModal() {
+      paymentOverlayEl.classList.remove("visible");
+    }
+
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      state.search = e.target.value || "";
+      renderProducts();
+    });
+
+    const tagOfficialOnlyEl = document.getElementById("tagOfficialOnly");
+    tagOfficialOnlyEl.addEventListener("click", () => {
+      state.onlyOfficial = !state.onlyOfficial;
+      tagOfficialOnlyEl.style.background = state.onlyOfficial
+        ? "radial-gradient(circle at top left, rgba(34,197,94,0.35), transparent 65%)"
+        : "radial-gradient(circle at top left, rgba(56,189,248,0.18), transparent 65%)";
+      renderProducts();
+    });
+
+    document
+      .querySelector("[data-close-variant]")
+      .addEventListener("click", closeVariantModal);
+    document
+      .querySelector("[data-close-payment]")
+      .addEventListener("click", closePaymentModal);
+
+    variantOverlayEl.addEventListener("click", (e) => {
+      if (e.target === variantOverlayEl) closeVariantModal();
+    });
+    paymentOverlayEl.addEventListener("click", (e) => {
+      if (e.target === paymentOverlayEl) closePaymentModal();
+    });
+
+    function copyToClipboard(text) {
+      if (!navigator.clipboard) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          alert("Đã sao chép vào clipboard.");
+        } catch (err) {
+          alert("Không thể sao chép, vui lòng copy thủ công.");
+        }
+        document.body.removeChild(ta);
+        return;
+      }
+      navigator.clipboard
+        .writeText(text)
+        .then(() => alert("Đã sao chép vào clipboard."))
+        .catch(() => alert("Không thể sao chép, vui lòng copy thủ công."));
+    }
+
+    document
+      .querySelector('[data-copy="bank"]')
+      .addEventListener("click", () => {
+        const bank = document.getElementById("bankNumberText").textContent.trim();
+        copyToClipboard(bank);
+      });
+
+    document
+      .querySelector('[data-copy="content"]')
+      .addEventListener("click", () => {
+        const content = transferContentTextEl.textContent.trim();
+        copyToClipboard(content);
+      });
+
+    const thankOverlayEl = document.getElementById("thankOverlay");
+    const thankCloseBtn = document.getElementById("thankCloseBtn");
+
+    function openThankOverlay() {
+      thankOverlayEl.classList.add("visible");
+    }
+    function closeThankOverlay() {
+      thankOverlayEl.classList.remove("visible");
+    }
+
+    thankCloseBtn.addEventListener("click", closeThankOverlay);
+    thankOverlayEl.addEventListener("click", (e) => {
+      if (e.target === thankOverlayEl) closeThankOverlay();
+    });
+
+    document.getElementById("btnPaid").addEventListener("click", () => {
+      closePaymentModal();
+      openThankOverlay();
+    });
+
+    document.getElementById("btnZalo").addEventListener("click", () => {
+      window.open("https://zalo.me/0389773782", "_blank");
+    });
+
+    document
+      .getElementById("floatingZaloBtn")
+      .addEventListener("click", () => {
+        window.open("https://zalo.me/0389773782", "_blank");
+      });
+
+    renderProducts();
+  </script>
+</body>
+</html>
